@@ -28,6 +28,3 @@ We propose a Resilient AI Methodology using a highly optimized, multi-phase comp
 * **Phase 1: Architecture Extraction & Token Selection:** We will extract the nested E2B sub-model from the E4B weights using MatFormer’s pre-defined Matryoshka boundaries. To reduce the vision token bottleneck without ToMe’s architectural mismatch risk, we will apply attention-based static token selection derived from the E4B teacher.
 * **Phase 2: Hybrid Quantization:** To maximize memory efficiency while protecting performance, we will apply AWQ on the MobileNet-v5 vision encoder (protecting high-activation salient weights), GPTQ on the language head for global compression, and INT8 integer-only quantization on the vision-language projector to eliminate FP16 memory shuffles.
 * **Phase 3: Sequential Duo-Teacher Knowledge Distillation:** To prevent gradient interference and hallucinations, we will decouple the distillation process. We first distill the vision student from the uncompressed MobileNet-v5. Once representations stabilize, we freeze it, and subsequently distill the language student from the E4B teacher.
-
----
-*(Note: Sections 5 & 6 covering the codebase and supplementary documentation will be appended here upon completion.)*
