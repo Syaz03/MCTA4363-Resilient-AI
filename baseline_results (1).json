@@ -1,0 +1,360 @@
+{
+  "model": "gemma-3n-E4B",
+  "n_samples": 50,
+  "vqa_accuracy": 0.36,
+  "avg_ttft_seconds": 12.44,
+  "total_kg_co2": 0.00620028,
+  "kg_co2_per_sample": 0.0001240057,
+  "results": [
+    {
+      "question": "What color are the walls?",
+      "predicted": "user\n\n\n\n\nQuestion: What color are the walls? Answer briefly.\nmodel\nBeige.",
+      "ground_truth": "white",
+      "answer_type": "other",
+      "ttft_seconds": 7.7669
+    },
+    {
+      "question": "How many beds?",
+      "predicted": "user\n\n\n\n\nQuestion: How many beds? Answer briefly.\nmodel\nOne.",
+      "ground_truth": "1",
+      "answer_type": "number",
+      "ttft_seconds": 5.9122
+    },
+    {
+      "question": "What kind of room is this?",
+      "predicted": "user\n\n\n\n\nQuestion: What kind of room is this? Answer briefly.\nmodel\nBedroom.",
+      "ground_truth": "bedroom",
+      "answer_type": "other",
+      "ttft_seconds": 5.9942
+    },
+    {
+      "question": "How many are playing ball?",
+      "predicted": "user\n\n\n\n\nQuestion: How many are playing ball? Answer briefly.\nmodel\nOne.",
+      "ground_truth": "1",
+      "answer_type": "number",
+      "ttft_seconds": 6.056
+    },
+    {
+      "question": "Is this rice noodle soup?",
+      "predicted": "user\n\n\n\n\nQuestion: Is this rice noodle soup? Answer briefly.\nmodel\nYes.",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 6.0794
+    },
+    {
+      "question": "How many seats are there?",
+      "predicted": "user\n\n\n\n\nQuestion: How many seats are there? Answer briefly.\nmodel\nOne.",
+      "ground_truth": "1",
+      "answer_type": "number",
+      "ttft_seconds": 6.0285
+    },
+    {
+      "question": "What is the child eating?",
+      "predicted": "user\n\n\n\n\nQuestion: What is the child eating? Answer briefly.\nmodel\nA donut.",
+      "ground_truth": "donut",
+      "answer_type": "other",
+      "ttft_seconds": 7.6736
+    },
+    {
+      "question": "How many umbrellas do you see?",
+      "predicted": "user\n\n\n\n\nQuestion: How many umbrellas do you see? Answer briefly.\nmodel\nThere are **two** umbrellas visible in the image.",
+      "ground_truth": "0",
+      "answer_type": "number",
+      "ttft_seconds": 19.1042
+    },
+    {
+      "question": "How many people are on the field?",
+      "predicted": "user\n\n\n\n\nQuestion: How many people are on the field? Answer briefly.\nmodel\nThere are **three** people on the field.",
+      "ground_truth": "3",
+      "answer_type": "number",
+      "ttft_seconds": 17.8146
+    },
+    {
+      "question": "How many frames are on the wall?",
+      "predicted": "user\n\n\n\n\nQuestion: How many frames are on the wall? Answer briefly.\nmodel\nThere are **6** frames on the wall.",
+      "ground_truth": "7",
+      "answer_type": "number",
+      "ttft_seconds": 17.6481
+    },
+    {
+      "question": "What color is the kids hair?",
+      "predicted": "user\n\n\n\n\nQuestion: What color is the kids hair? Answer briefly.\nmodel\nBlonde.",
+      "ground_truth": "blonde",
+      "answer_type": "other",
+      "ttft_seconds": 7.5766
+    },
+    {
+      "question": "What is the chair made of?",
+      "predicted": "user\n\n\n\n\nQuestion: What is the chair made of? Answer briefly.\nmodel\nThe chair appears to be made of **leather or faux leather**.",
+      "ground_truth": "leather",
+      "answer_type": "other",
+      "ttft_seconds": 25.0156
+    },
+    {
+      "question": "How many pictures on the wall?",
+      "predicted": "user\n\n\n\n\nQuestion: How many pictures on the wall? Answer briefly.\nmodel\nThere are **6** pictures on the wall.",
+      "ground_truth": "7",
+      "answer_type": "number",
+      "ttft_seconds": 17.6488
+    },
+    {
+      "question": "Is this room in someone's home?",
+      "predicted": "user\n\n\n\n\nQuestion: Is this room in someone's home? Answer briefly.\nmodel\nYes.",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 6.2063
+    },
+    {
+      "question": "What is to the right of the soup?",
+      "predicted": "user\n\n\n\n\nQuestion: What is to the right of the soup? Answer briefly.\nmodel\nChopsticks and a spoon.",
+      "ground_truth": "chopsticks",
+      "answer_type": "other",
+      "ttft_seconds": 13.3888
+    },
+    {
+      "question": "What website copyrighted the picture?",
+      "predicted": "user\n\n\n\n\nQuestion: What website copyrighted the picture? Answer briefly.\nmodel\nhttp://foodiebaker.com",
+      "ground_truth": "foodiebakercom",
+      "answer_type": "other",
+      "ttft_seconds": 14.7507
+    },
+    {
+      "question": "How many pictures are there?",
+      "predicted": "user\n\n\n\n\nQuestion: How many pictures are there? Answer briefly.\nmodel\nThere are **6** pictures.",
+      "ground_truth": "7",
+      "answer_type": "number",
+      "ttft_seconds": 13.3067
+    },
+    {
+      "question": "Which room is this?",
+      "predicted": "user\n\n\n\n\nQuestion: Which room is this? Answer briefly.\nmodel\nBedroom.",
+      "ground_truth": "bedroom",
+      "answer_type": "other",
+      "ttft_seconds": 6.0378
+    },
+    {
+      "question": "Is the bed white?",
+      "predicted": "user\n\n\n\n\nQuestion: Is the bed white? Answer briefly.\nmodel\nNo.",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 6.0145
+    },
+    {
+      "question": "How many photo's can you see?",
+      "predicted": "user\n\n\n\n\nQuestion: How many photo's can you see? Answer briefly.\nmodel\nOne.",
+      "ground_truth": "1",
+      "answer_type": "number",
+      "ttft_seconds": 6.0556
+    },
+    {
+      "question": "Where is he looking?",
+      "predicted": "user\n\n\n\n\nQuestion: Where is he looking? Answer briefly.\nmodel\nHe is looking to his left.",
+      "ground_truth": "down",
+      "answer_type": "other",
+      "ttft_seconds": 13.4905
+    },
+    {
+      "question": "Is there a chain link fence in the image?",
+      "predicted": "user\n\n\n\n\nQuestion: Is there a chain link fence in the image? Answer briefly.\nmodel\nNo.",
+      "ground_truth": "no",
+      "answer_type": "yes/no",
+      "ttft_seconds": 5.8688
+    },
+    {
+      "question": "Did the batter hit the ball?",
+      "predicted": "user\n\n\n\n\nQuestion: Did the batter hit the ball? Answer briefly.\nmodel\nNo.",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 6.2039
+    },
+    {
+      "question": "What is the man doing in the street?",
+      "predicted": "user\n\n\n\n\nQuestion: What is the man doing in the street? Answer briefly.\nmodel\nThe man is crossing the street at a crosswalk.",
+      "ground_truth": "walking",
+      "answer_type": "other",
+      "ttft_seconds": 19.0196
+    },
+    {
+      "question": "Could this be a hotel room?",
+      "predicted": "user\n\n\n\n\nQuestion: Could this be a hotel room? Answer briefly.\nmodel\nNo.",
+      "ground_truth": "no",
+      "answer_type": "yes/no",
+      "ttft_seconds": 6.1504
+    },
+    {
+      "question": "Is it daylight in this picture?",
+      "predicted": "user\n\n\n\n\nQuestion: Is it daylight in this picture? Answer briefly.\nmodel\nYes.",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 5.927
+    },
+    {
+      "question": "How many skyscrapers are there?",
+      "predicted": "user\n\n\n\n\nQuestion: How many skyscrapers are there? Answer briefly.\nmodel\nThere are **two** skyscrapers in the image.",
+      "ground_truth": "2",
+      "answer_type": "number",
+      "ttft_seconds": 17.8828
+    },
+    {
+      "question": "Is this room decorated for the 1970s?",
+      "predicted": "user\n\n\n\n\nQuestion: Is this room decorated for the 1970s? Answer briefly.\nmodel\nNo.",
+      "ground_truth": "no",
+      "answer_type": "yes/no",
+      "ttft_seconds": 5.927
+    },
+    {
+      "question": "What is he on top of?",
+      "predicted": "user\n\n\n\n\nQuestion: What is he on top of? Answer briefly.\nmodel\nA bench.",
+      "ground_truth": "picnic table",
+      "answer_type": "other",
+      "ttft_seconds": 7.6589
+    },
+    {
+      "question": "Are these twin mattresses?",
+      "predicted": "user\n\n\n\n\nQuestion: Are these twin mattresses? Answer briefly.\nmodel\nNo.",
+      "ground_truth": "no",
+      "answer_type": "yes/no",
+      "ttft_seconds": 5.9115
+    },
+    {
+      "question": "What is the size of the bed?",
+      "predicted": "user\n\n\n\n\nQuestion: What is the size of the bed? Answer briefly.\nmodel\nBased on the image, it's difficult to definitively determine the exact size of the bed. However",
+      "ground_truth": "queen",
+      "answer_type": "other",
+      "ttft_seconds": 31.0326
+    },
+    {
+      "question": "Is the boy playing baseball?",
+      "predicted": "user\n\n\n\n\nQuestion: Is the boy playing baseball? Answer briefly.\nmodel\nYes.",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 5.9256
+    },
+    {
+      "question": "What does the truck on the left sell?",
+      "predicted": "user\n\n\n\n\nQuestion: What does the truck on the left sell? Answer briefly.\nmodel\nThe truck on the left sells **sundaes, shakes, and cones**.",
+      "ground_truth": "ice cream",
+      "answer_type": "other",
+      "ttft_seconds": 26.4025
+    },
+    {
+      "question": "Are the windows big?",
+      "predicted": "user\n\n\n\n\nQuestion: Are the windows big? Answer briefly.\nmodel\nYes.",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 6.0356
+    },
+    {
+      "question": "What is behind the foot of the bed?",
+      "predicted": "user\n\n\n\n\nQuestion: What is behind the foot of the bed? Answer briefly.\nmodel\nA desk.",
+      "ground_truth": "chair",
+      "answer_type": "other",
+      "ttft_seconds": 7.4562
+    },
+    {
+      "question": "Why is the cow laying down?",
+      "predicted": "user\n\n\n\n\nQuestion: Why is the cow laying down? Answer briefly.\nmodel\nThe cow is laying down to rest.",
+      "ground_truth": "tired",
+      "answer_type": "other",
+      "ttft_seconds": 14.8947
+    },
+    {
+      "question": "What color is the grass in this picture?",
+      "predicted": "user\n\n\n\n\nQuestion: What color is the grass in this picture? Answer briefly.\nmodel\nThe grass in the picture is **gray** because the image is in black and white.",
+      "ground_truth": "green",
+      "answer_type": "other",
+      "ttft_seconds": 30.6442
+    },
+    {
+      "question": "How many colors is the building on the right painted?",
+      "predicted": "user\n\n\n\n\nQuestion: How many colors is the building on the right painted? Answer briefly.\nmodel\nThe building on the right is painted **one color**: brown.",
+      "ground_truth": "1",
+      "answer_type": "number",
+      "ttft_seconds": 22.2719
+    },
+    {
+      "question": "What animal print does that chair resemble?",
+      "predicted": "user\n\n\n\n\nQuestion: What animal print does that chair resemble? Answer briefly.\nmodel\nThe chair resembles **leopard print**.",
+      "ground_truth": "none",
+      "answer_type": "other",
+      "ttft_seconds": 14.7584
+    },
+    {
+      "question": "How many signs?",
+      "predicted": "user\n\n\n\n\nQuestion: How many signs? Answer briefly.\nmodel\nThere are **four** signs.",
+      "ground_truth": "4",
+      "answer_type": "number",
+      "ttft_seconds": 13.2504
+    },
+    {
+      "question": "Are the lights on in this room?",
+      "predicted": "user\n\n\n\n\nQuestion: Are the lights on in this room? Answer briefly.\nmodel\nYes.",
+      "ground_truth": "no",
+      "answer_type": "yes/no",
+      "ttft_seconds": 6.1208
+    },
+    {
+      "question": "How many chairs are in the photo?",
+      "predicted": "user\n\n\n\n\nQuestion: How many chairs are in the photo? Answer briefly.\nmodel\nOne.",
+      "ground_truth": "1",
+      "answer_type": "number",
+      "ttft_seconds": 5.9489
+    },
+    {
+      "question": "Is this a creamy soup?",
+      "predicted": "user\n\n\n\n\nQuestion: Is this a creamy soup? Answer briefly.\nmodel\nNo.",
+      "ground_truth": "no",
+      "answer_type": "yes/no",
+      "ttft_seconds": 6.1403
+    },
+    {
+      "question": "How many stories is the building on the left?",
+      "predicted": "user\n\n\n\n\nQuestion: How many stories is the building on the left? Answer briefly.\nmodel\nThe building on the left appears to have **five** stories.",
+      "ground_truth": "3",
+      "answer_type": "number",
+      "ttft_seconds": 22.1521
+    },
+    {
+      "question": "Is the bed made?",
+      "predicted": "user\n\n\n\n\nQuestion: Is the bed made? Answer briefly.\nmodel\nNo.",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 5.9332
+    },
+    {
+      "question": "Why is there a gap between the roof and wall?",
+      "predicted": "user\n\n\n\n\nQuestion: Why is there a gap between the roof and wall? Answer briefly.\nmodel\nThe gap between the roof and wall is likely for **ventilation**. It allows for airflow to help",
+      "ground_truth": "yes",
+      "answer_type": "other",
+      "ttft_seconds": 30.8269
+    },
+    {
+      "question": "Is that a folding chair?",
+      "predicted": "user\n\n\n\n\nQuestion: Is that a folding chair? Answer briefly.\nmodel\nNo.",
+      "ground_truth": "no",
+      "answer_type": "yes/no",
+      "ttft_seconds": 5.9766
+    },
+    {
+      "question": "What color is the bedspread?",
+      "predicted": "user\n\n\n\n\nQuestion: What color is the bedspread? Answer briefly.\nmodel\nBeige.",
+      "ground_truth": "white",
+      "answer_type": "other",
+      "ttft_seconds": 7.5669
+    },
+    {
+      "question": "What are the people in the background doing?",
+      "predicted": "user\n\n\n\n\nQuestion: What are the people in the background doing? Answer briefly.\nmodel\nThe people in the background are watching the skateboarder perform a trick.",
+      "ground_truth": "watching",
+      "answer_type": "other",
+      "ttft_seconds": 23.5664
+    },
+    {
+      "question": "How many sources of light are there?",
+      "predicted": "user\n\n\n\n\nQuestion: How many sources of light are there? Answer briefly.\nmodel\nThere is **one** primary source of light: the window.",
+      "ground_truth": "1",
+      "answer_type": "number",
+      "ttft_seconds": 24.976
+    }
+  ]
+}
