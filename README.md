@@ -1,30 +1,166 @@
-# Track 3 — Innovation Challenge
+# Resilient AI Challenge — Track 3: Innovation Challenge
+## Team: Syaz03 | MCTA4363
 
-## Assessment 1: Challenge Analysis & Baseline Solution
+[![Challenge](https://img.shields.io/badge/Challenge-Resilient%20AI-teal)](https://resilientai.org)
+[![Model](https://img.shields.io/badge/Model-Gemma%204%20E4B-blue)](https://huggingface.co/google/gemma-4-E4B-it)
+[![Track](https://img.shields.io/badge/Track-3%20Innovation-orange)]()
+[![Hardware](https://img.shields.io/badge/Hardware-RTX%204060%20Local-green)]()
 
-### 1. Description of the Innovation Challenge
-This project directly embodies the competition’s thesis of sustainable and inclusive AI. The challenge is to prove that publication-grade, cutting-edge VLM (Vision-Language Model) compression research can be achieved without relying on datacenter-scale compute. By aggressively optimizing complex multimodal architectures, we aim to democratize advanced AI access, making it viable for consumer-grade local hardware setups.
+---
 
-### 2. Problem Statement & Evaluation Criteria
-**Problem Statement:**
-Deploying high-capability multimodal models like Gemma 3n (E4B) on local hardware is restricted by severe memory bottlenecks, particularly the 256+ vision token bottleneck, and the high energy costs of inference. Compressing these models often leads to cross-modal misalignment and hallucination due to architectural mismatch and gradient interference during joint training. The objective is to compress the E4B architecture to a nested E2B sub-model while maintaining representational stability.
+## 🎯 Project Overview
 
-**Evaluation Criteria:**
-* **Energy Metrics (Primary):** Joules-per-token measured via `nvidia-smi` power logging.
-* **Latency:** Time To First Token (TTFT).
-* **Efficiency:** FLOPs evaluated as a theoretical anchor.
-* **Accuracy:** VQA score compared against the uncompressed E4B baseline.
+This project targets the **Image-to-Text category** of the Resilient AI Challenge, using `google/gemma-4-E4B-it` as the base model. The goal is to maximise energy efficiency while maintaining ≥80% of baseline accuracy.
 
-### 3. Analysis of Dataset / Available Resources
-**Dataset:**
-* **VQAv2 Dataset:** Utilizing stratified, paired image-text data. This will be specifically used to calibrate the quantization process and preserve cross-modal alignment at the vision-language projector boundary.
+Our approach goes beyond simple quantization — we implement a **multi-phase research pipeline** that combines architecture-level extraction, hybrid quantization, and sequential knowledge distillation to produce a genuinely smaller and more efficient model.
 
-**Available Resources:**
-* **Hardware:** Executed entirely on a local consumer-grade machine equipped with an NVIDIA RTX 4060 running Ubuntu.
+---
 
-### 4. Proposed Deep Learning Approach
-We propose a Resilient AI Methodology using a highly optimized, multi-phase compression pipeline:
+## 🏗️ Architecture
 
-* **Phase 1: Architecture Extraction & Token Selection:** We will extract the nested E2B sub-model from the E4B weights using MatFormer’s pre-defined Matryoshka boundaries. To reduce the vision token bottleneck without ToMe’s architectural mismatch risk, we will apply attention-based static token selection derived from the E4B teacher.
-* **Phase 2: Hybrid Quantization:** To maximize memory efficiency while protecting performance, we will apply AWQ on the MobileNet-v5 vision encoder (protecting high-activation salient weights), GPTQ on the language head for global compression, and INT8 integer-only quantization on the vision-language projector to eliminate FP16 memory shuffles.
-* **Phase 3: Sequential Duo-Teacher Knowledge Distillation:** To prevent gradient interference and hallucinations, we will decouple the distillation process. We first distill the vision student from the uncompressed MobileNet-v5. Once representations stabilize, we freeze it, and subsequently distill the language student from the E4B teacher.
+```
+┌─────────────────────────────────────────────────────────────┐
+│                  Multi-Phase Compression Pipeline           │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  E4B Teacher ──► PHASE 1: MatFormer E2B Extraction          │
+│                           + Attention Token Selection       │
+│                           (256 → 128 vision tokens)         │
+│                  │                                          │
+│                  ▼                                          │
+│               PHASE 2: Hybrid Quantization                  │
+│                  AWQ  ── vision encoder (MobileNet-v5)      │
+│                  GPTQ ── language head                      │
+│                  INT8 ── VL projector                       │
+│                  │                                          │
+│                  ▼                                          │
+│               PHASE 3: Sequential Duo-Teacher KD            │
+│                  Step A: vision student ← MobileNet teacher │
+│                  Step B: language student ← E4B teacher     │
+│                  │                                          │
+│                  ▼                                          │
+│             Compressed E2B Model → HuggingFace Submission   │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 📁 Repository Structure
+
+```
+MCTA4363-Resilient-AI/
+│
+├── notebooks/
+│   ├── ResAI_Baseline.ipynb          # Baseline E4B pipeline (sanity check)
+│   └── ResAI_DL_Pipeline.ipynb       # Full multi-phase DL pipeline (Track 3)
+│
+├── EXPERIMENTAL_LOG.md               # Iteration log — all experiments documented
+│
+├── README.md                         # This file
+│
+└── outputs/                          # Generated by notebooks (gitignored)
+    ├── baseline_results.json
+    ├── nf4_eval_results.json
+    └── emissions/
+```
+
+---
+
+## 🔬 Deep Learning Approach
+
+### Phase 1 — Architecture Extraction & Token Selection
+
+**MatFormer E2B Extraction:**  
+Gemma 4 E4B uses a Matryoshka nested architecture, where a smaller E2B sub-model is encoded within the E4B weight matrices at predefined layer boundaries. We extract this sub-model directly from the teacher weights, avoiding the cost of training from scratch.
+
+**Attention-Based Token Selection:**  
+Rather than using ToMe (Token Merging), which risks architectural mismatch at the VL projector boundary, we compute static token importance scores from the teacher's attention rollout on a calibration set. The top-K vision tokens (K = 50% of 256 = 128) are retained, reducing vision-side compute.
+
+### Phase 2 — Hybrid Quantization
+
+| Component | Method | Rationale |
+|-----------|--------|-----------|
+| Vision encoder (MobileNet-v5) | AWQ 4-bit | Activation-aware scaling protects high-magnitude salient weights |
+| Language head | GPTQ 4-bit | Hessian-based layer-wise compression, better for LM layers |
+| VL Projector | INT8 | Bridge layer; INT8 eliminates FP16 memory shuffles with minimal accuracy impact |
+
+**Baseline submission:** NF4 4-bit (bitsandbytes) on the full model — simpler and already competition-ready.
+
+### Phase 3 — Sequential Duo-Teacher Knowledge Distillation
+
+**Problem with joint distillation:** Training the vision and language components simultaneously creates gradient interference — vision loss gradients corrupt language weight updates and vice versa, causing hallucination artifacts.
+
+**Solution — Sequential decoupling:**
+1. **Phase A:** Freeze the language head entirely. Distill only the vision encoder using the uncompressed MobileNet-v5 teacher. The student vision encoder learns to replicate the teacher's feature representations without language interference.
+2. **Phase B:** Freeze the now-stable vision encoder. Distill the language head using the full E4B teacher's soft labels (KL divergence) + hard task loss (cross-entropy), with temperature T=4.0.
+
+**KD Loss:**
+```
+L_total = α·L_KD + (1-α)·L_task + β·L_hidden
+L_KD    = KL(student_soft || teacher_soft),  T=4.0
+α = 0.7, β = 0.1
+```
+
+---
+
+## 📊 Experimental Results
+
+See [EXPERIMENTAL_LOG.md](./EXPERIMENTAL_LOG.md) for full iteration history.
+
+| Experiment | Technique | VRAM | CO₂ (relative) | Local Accuracy | Status |
+|-----------|-----------|------|----------------|----------------|--------|
+| 001 | Raw 31B load | OOM | — | — | ❌ |
+| 002 | NF4 4-bit E4B | 4.8 GB | Baseline | TBD | ✅ Round 1 |
+| 003 | NF4 + MoE top-k=1 | 4.6 GB | TBD | TBD | 🔄 |
+| 004 | NF4 + Token selection | TBD | TBD | TBD | 🔄 |
+| 005 | Duo-Teacher KD | TBD | TBD | TBD | 📋 Planned |
+
+---
+
+## ⚙️ Setup & Usage
+
+### Requirements
+```bash
+pip install transformers accelerate bitsandbytes codecarbon
+pip install 'transformers[vision]' autoawq auto-gptq peft
+```
+
+### Authentication
+```python
+from huggingface_hub import login
+login(token='your_hf_token')  # accept Gemma license at hf.co/google/gemma-4-E4B-it first
+```
+
+### Run Baseline Pipeline
+Open `notebooks/ResAI_Baseline.ipynb` in Colab or locally and run all cells.
+
+### Run Full DL Pipeline (Track 3)
+Open `notebooks/ResAI_DL_Pipeline.ipynb` — runs all three phases end-to-end.
+
+---
+
+## 🏆 Competition Details
+
+| Item | Details |
+|------|---------|
+| Challenge | Resilient AI Challenge |
+| Category | Image-to-Text (Gemma 4 by Google) |
+| Base model | `google/gemma-4-E4B-it` |
+| Evaluation platform | HuggingFace (NVIDIA L4, 16GB) |
+| Inference engine | vLLM 0.17.1 / llama.cpp |
+| Quality gate | ≥80% of baseline accuracy |
+| Ranking criterion | Lowest energy consumption |
+| Round 1 deadline | May 16–20, 2026 |
+| Final deadline | June 15, 2026 |
+| Awards ceremony | July 7–10, 2026 (ITU Geneva) |
+
+---
+
+## 📚 References
+
+- [Gemma 4 Technical Report](https://huggingface.co/google/gemma-4-E4B-it)
+- [AWQ: Activation-aware Weight Quantization](https://arxiv.org/abs/2306.00978)
+- [GPTQ: Post-Training Quantization](https://arxiv.org/abs/2210.17323)
+- [MatFormer: Nested Transformers](https://arxiv.org/abs/2310.07707)
+- [Knowledge Distillation Survey](https://arxiv.org/abs/2006.05525)
+- [CodeCarbon: Tracking Emissions](https://codecarbon.io)
