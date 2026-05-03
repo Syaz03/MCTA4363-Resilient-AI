@@ -1,5 +1,5 @@
 # Resilient AI Challenge — Track 3: Innovation Challenge
-## Team: Syaz03 | MCTA4363
+## Team: Visca Barca | MCTA4363
 
 [![Challenge](https://img.shields.io/badge/Challenge-Resilient%20AI-teal)](https://resilientai.org)
 [![Model](https://img.shields.io/badge/Model-Gemma%204%20E4B-blue)](https://huggingface.co/google/gemma-4-E4B-it)
