@@ -1,21 +1,149 @@
-import torch
+import subprocess
 import time
 import json
-from transformers import AutoProcessor, AutoModelForImageTextToText
-from codecarbon import EmissionsTracker
-from datasets import load_dataset
 import random
+import tempfile
+import os
+from difflib import SequenceMatcher
+from datasets import load_dataset
+from codecarbon import EmissionsTracker
 
-model_id = "google/gemma-4-E4B-it"
+LLAMA_CLI = "/home/muhdirfanrosdin/resAI/llama.cpp/build/bin/llama-mtmd-cli"
+MODEL = "/home/muhdirfanrosdin/resAI/MCTA4363-Resilient-AI/models/gemma4-E4B-Q4_K_M.gguf"
+MMPROJ = "/home/muhdirfanrosdin/resAI/MCTA4363-Resilient-AI/models/gemma4-E4B-mmproj.gguf"
 
-print("Loading processor...")
-processor = AutoProcessor.from_pretrained(model_id)
+NUMBER_MAP = {"zero":"0","one":"1","two":"2","three":"3","four":"4",
+              "five":"5","six":"6","seven":"7","eight":"8","nine":"9","ten":"10"}
 
-print("Loading model in FP8...")
-model = AutoModelForImageTextToText.from_pretrained(
-    model_id,
-    dtype=torch.float8_e4m3fn,
-    device_map="cuda:0"
-)
-model.eval()
-print(f"Model loaded. VRAM used: {torch.cuda.memory_allocated()/1e9:.2f} GB")
+def is_correct(gt, pred):
+    gt = gt.lower().strip()
+    pred = pred.lower().strip()
+    if not pred:
+        return False
+    # Normalize number words
+    gt_n = NUMBER_MAP.get(gt, gt)
+    pred_n = NUMBER_MAP.get(pred, pred)
+    if gt_n == pred_n:
+        return True
+    if gt in pred or pred in gt:
+        return True
+    ratio = SequenceMatcher(None, gt, pred).ratio()
+    return ratio > 0.6
+
+def run_inference(image, question, idx=0):
+    with tempfile.NamedTemporaryFile(suffix=".jpg", delete=False) as f:
+        image.save(f.name)
+        img_path = f.name
+
+    cmd = [
+        LLAMA_CLI,
+        "-m", MODEL,
+        "--mmproj", MMPROJ,
+        "--image", img_path,
+        "-p", f"Question: {question} Answer in one word or short phrase only.",
+        "-n", "300",
+        "--gpu-layers", "99",
+        "--jinja",
+    ]
+
+    start = time.perf_counter()
+    result = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
+    ttft = time.perf_counter() - start
+
+    if idx == 0:
+        print(f"RAW STDOUT: {repr(result.stdout[:500])}")
+
+    os.unlink(img_path)
+
+    output = result.stdout.strip()
+
+    # Get content after thinking block ends
+    if "<|channel>thought" in output:
+        parts = output.split("<|channel>thought")
+        # Take what comes after the thinking
+        after = parts[0] if parts[0].strip() else ""
+        if not after:
+            # Thinking is at start, get end of stdout
+            full = parts[-1] if len(parts) > 1 else ""
+            lines = [l.strip() for l in output.split('\n') 
+                    if l.strip() 
+                    and not l.strip().startswith("Here's")
+                    and not l.strip().startswith("Thinking")
+                    and not l.strip().startswith("**")
+                    and not l.strip()[0].isdigit()
+                    or l.strip() in ["Yes","No","yes","no"]]
+            output = lines[-1] if lines else ""
+        else:
+            output = after.strip()
+    
+    # Clean template markers
+    for marker in ["<|turn>model", "<turn|>", "<|turn>"]:
+        output = output.replace(marker, "").strip()
+    
+    lines = [l.strip() for l in output.split('\n') if l.strip()]
+    output = lines[-1] if lines else ""
+
+    return output, ttft
+
+# Load dataset
+print("Loading VQAv2...")
+ds = load_dataset("lmms-lab/VQAv2", split="validation", streaming=True)
+samples = []
+for item in ds:
+    samples.append(item)
+    if len(samples) >= 500:
+        break
+
+yes_no = [s for s in samples if s["answer_type"] == "yes/no"][:15]
+number = [s for s in samples if s["answer_type"] == "number"][:15]
+other  = [s for s in samples if s["answer_type"] == "other"][:20]
+stratified = yes_no + number + other
+random.shuffle(stratified)
+print(f"Dataset ready: {len(stratified)} samples")
+
+print("\n--- EXPERIMENT 004: Q4_K_M GGUF (llama.cpp) ---")
+tracker = EmissionsTracker(log_level="error")
+tracker.start()
+results = []
+
+for i, item in enumerate(stratified):
+    try:
+        pred, ttft = run_inference(item["image"], item["question"], idx=i)
+        gt = item["multiple_choice_answer"]
+        correct = is_correct(gt, pred)
+        results.append({
+            "question": item["question"],
+            "predicted": pred,
+            "ground_truth": gt,
+            "answer_type": item["answer_type"],
+            "ttft_seconds": round(ttft, 4),
+            "correct": correct
+        })
+        icon = "✅" if correct else "❌"
+        print(f"[{i+1}/50] Q: {item['question'][:40]} | GT: {gt} | Pred: {pred[:40]} | TTFT: {ttft:.2f}s | {icon}")
+    except Exception as e:
+        print(f"[{i+1}/50] ERROR: {e}")
+        results.append({"question": item["question"], "error": str(e), "correct": False})
+
+emissions = tracker.stop()
+accuracy = sum(r.get("correct", False) for r in results) / len(results)
+avg_ttft = sum(r.get("ttft_seconds", 0) for r in results if "ttft_seconds" in r) / len(results)
+
+report = {
+    "model": "gemma-4-E4B-it Q4_K_M GGUF llama.cpp",
+    "vqa_accuracy": round(accuracy, 4),
+    "avg_ttft_seconds": round(avg_ttft, 4),
+    "co2_kg": round(emissions, 8),
+    "co2_grams_per_sample": round((emissions * 1000) / len(results), 6),
+    "results": results
+}
+
+with open("004_results.json", "w") as f:
+    json.dump(report, f, indent=2)
+
+print(f"\n{'='*45}")
+print(f"VQA Accuracy : {accuracy:.2%}")
+print(f"Avg TTFT     : {avg_ttft:.3f}s")
+print(f"CO2/sample   : {(emissions*1000)/len(results):.4f}g")
+print(f"{'='*45}")
+print("Saved to 004_results.json")

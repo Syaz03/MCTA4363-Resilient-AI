@@ -1,0 +1,409 @@
+{
+  "model": "gemma-4-E4B-it Q4_K_M GGUF llama.cpp",
+  "vqa_accuracy": 0.26,
+  "avg_ttft_seconds": 3.4967,
+  "co2_kg": 0.00483714,
+  "co2_grams_per_sample": 0.096743,
+  "results": [
+    {
+      "question": "Could this be a hotel room?",
+      "predicted": "*   *Conclusion:* All signs point strongly towards a commercially managed lodging space.",
+      "ground_truth": "no",
+      "answer_type": "yes/no",
+      "ttft_seconds": 4.1582,
+      "correct": false
+    },
+    {
+      "question": "How many colors is the building on the right painted?",
+      "predicted": "*   The trim (windows",
+      "ground_truth": "1",
+      "answer_type": "number",
+      "ttft_seconds": 4.1699,
+      "correct": false
+    },
+    {
+      "question": "What color are the walls?",
+      "predicted": "White",
+      "ground_truth": "white",
+      "answer_type": "other",
+      "ttft_seconds": 2.0927,
+      "correct": true
+    },
+    {
+      "question": "Which room is this?",
+      "predicted": "*   *Option D: Dorm* (Incorrect; too basic).",
+      "ground_truth": "bedroom",
+      "answer_type": "other",
+      "ttft_seconds": 4.1709,
+      "correct": false
+    },
+    {
+      "question": "Is the boy playing baseball?",
+      "predicted": "Yes",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 2.0122,
+      "correct": true
+    },
+    {
+      "question": "Is the bed white?",
+      "predicted": "*   \"Cream\" (One word, acceptable.)",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 4.0808,
+      "correct": false
+    },
+    {
+      "question": "What website copyrighted the picture?",
+      "predicted": "*(Self-Correction/Refinement: The text visible is \"\u00a9HTTP://FOODIEBAKER.COM\". The website name is FoodieBaker.)*",
+      "ground_truth": "foodiebakercom",
+      "answer_type": "other",
+      "ttft_seconds": 3.6229,
+      "correct": false
+    },
+    {
+      "question": "How many seats are there?",
+      "predicted": "Three",
+      "ground_truth": "1",
+      "answer_type": "number",
+      "ttft_seconds": 2.0854,
+      "correct": false
+    },
+    {
+      "question": "Is there a chain link fence in the image?",
+      "predicted": "No",
+      "ground_truth": "no",
+      "answer_type": "yes/no",
+      "ttft_seconds": 2.0892,
+      "correct": true
+    },
+    {
+      "question": "What is the child eating?",
+      "predicted": "*(Self-Correction/Refinement: Since the item is clearly a type of fried, sugary dough, \"",
+      "ground_truth": "donut",
+      "answer_type": "other",
+      "ttft_seconds": 4.1554,
+      "correct": false
+    },
+    {
+      "question": "Is this room decorated for the 1970s?",
+      "predicted": "No.",
+      "ground_truth": "no",
+      "answer_type": "yes/no",
+      "ttft_seconds": 2.0094,
+      "correct": true
+    },
+    {
+      "question": "What is the chair made of?",
+      "predicted": "*   Fabric (incorrect, it looks too structured).",
+      "ground_truth": "leather",
+      "answer_type": "other",
+      "ttft_seconds": 3.7852,
+      "correct": false
+    },
+    {
+      "question": "Is that a folding chair?",
+      "predicted": "*   Is it a folding chair? No. It appears to be a modern, upholstered, ergonomic office chair (a task chair or executive chair). It does not have the characteristic mechanism, frame, or design of a collapsible camping/folding chair.",
+      "ground_truth": "no",
+      "answer_type": "yes/no",
+      "ttft_seconds": 3.5304,
+      "correct": true
+    },
+    {
+      "question": "Is this room in someone's home?",
+      "predicted": "<|channel>thought",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 3.0786,
+      "correct": false
+    },
+    {
+      "question": "How many frames are on the wall?",
+      "predicted": "*   **Right Wall (None visible - the focus is on the wall behind the bed and desk area).",
+      "ground_truth": "7",
+      "answer_type": "number",
+      "ttft_seconds": 4.0651,
+      "correct": false
+    },
+    {
+      "question": "How many signs?",
+      "predicted": "*   Section 2: LANDS LANE",
+      "ground_truth": "4",
+      "answer_type": "number",
+      "ttft_seconds": 4.1405,
+      "correct": false
+    },
+    {
+      "question": "Where is he looking?",
+      "predicted": "<|channel>thought",
+      "ground_truth": "down",
+      "answer_type": "other",
+      "ttft_seconds": 4.0879,
+      "correct": false
+    },
+    {
+      "question": "What color is the kids hair?",
+      "predicted": "Blonde",
+      "ground_truth": "blonde",
+      "answer_type": "other",
+      "ttft_seconds": 2.0129,
+      "correct": true
+    },
+    {
+      "question": "Is this rice noodle soup?",
+      "predicted": "*   Broth (brownish/yellowish)",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 3.8419,
+      "correct": false
+    },
+    {
+      "question": "How many skyscrapers are there?",
+      "predicted": "*   *Overall Impression:* The buildings are large, but none reach the height or slenderness typically associated with modern",
+      "ground_truth": "2",
+      "answer_type": "number",
+      "ttft_seconds": 4.0444,
+      "correct": false
+    },
+    {
+      "question": "How many chairs are in the photo?",
+      "predicted": "3",
+      "ground_truth": "1",
+      "answer_type": "number",
+      "ttft_seconds": 2.0135,
+      "correct": false
+    },
+    {
+      "question": "Is the bed made?",
+      "predicted": "*   *Best approach:* Since the bedding is present and covering the bed, \"Yes\" is the most accurate, simple answer, even if it's not",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 4.0339,
+      "correct": true
+    },
+    {
+      "question": "What animal print does that chair resemble?",
+      "predicted": "*",
+      "ground_truth": "none",
+      "answer_type": "other",
+      "ttft_seconds": 4.1774,
+      "correct": false
+    },
+    {
+      "question": "Is this a creamy soup?",
+      "predicted": "*   The liquid itself appears translucent and broth-like, rather than thick, opaque, or uniform (which characterizes \"creamy\").",
+      "ground_truth": "no",
+      "answer_type": "yes/no",
+      "ttft_seconds": 4.0667,
+      "correct": false
+    },
+    {
+      "question": "How many are playing ball?",
+      "predicted": "*   There are no other visible people playing ball in the image.",
+      "ground_truth": "1",
+      "answer_type": "number",
+      "ttft_seconds": 3.4816,
+      "correct": false
+    },
+    {
+      "question": "How many beds?",
+      "predicted": "Two",
+      "ground_truth": "1",
+      "answer_type": "number",
+      "ttft_seconds": 2.0677,
+      "correct": false
+    },
+    {
+      "question": "What is he on top of?",
+      "predicted": "*   *Attempt 3 (Most specific short phrase):* Outdoor table. (Very accurate).",
+      "ground_truth": "picnic table",
+      "answer_type": "other",
+      "ttft_seconds": 4.2027,
+      "correct": false
+    },
+    {
+      "question": "How many pictures are there?",
+      "predicted": "*   Total: 3 + 4 + 2 =",
+      "ground_truth": "7",
+      "answer_type": "number",
+      "ttft_seconds": 4.1406,
+      "correct": false
+    },
+    {
+      "question": "What is the size of the bed?",
+      "predicted": "Queen",
+      "ground_truth": "queen",
+      "answer_type": "other",
+      "ttft_seconds": 2.049,
+      "correct": true
+    },
+    {
+      "question": "Is it daylight in this picture?",
+      "predicted": "*   Possible answers: Yes, Daylight, Daytime, Bright.",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 4.1072,
+      "correct": true
+    },
+    {
+      "question": "How many photo's can you see?",
+      "predicted": "*   Does the user mean things that *look* like pictures (e.g., posters, signs, decals)? (If so, the question is ambiguous, but usually, \"photo's\" implies photography.)",
+      "ground_truth": "1",
+      "answer_type": "number",
+      "ttft_seconds": 4.1145,
+      "correct": false
+    },
+    {
+      "question": "What is behind the foot of the bed?",
+      "predicted": "<|channel>thought",
+      "ground_truth": "chair",
+      "answer_type": "other",
+      "ttft_seconds": 4.3015,
+      "correct": false
+    },
+    {
+      "question": "Why is the cow laying down?",
+      "predicted": "Resting",
+      "ground_truth": "tired",
+      "answer_type": "other",
+      "ttft_seconds": 2.1275,
+      "correct": false
+    },
+    {
+      "question": "Did the batter hit the ball?",
+      "predicted": "*   *No* (This is",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 4.1328,
+      "correct": false
+    },
+    {
+      "question": "Are the windows big?",
+      "predicted": "*   *Draft options:* Yes, they are. / Very big. / Large. / Yes.",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 4.0922,
+      "correct": true
+    },
+    {
+      "question": "How many stories is the building on the left?",
+      "predicted": "*   **Taller, rectangular block (Behind/on top):** This section has very narrow, uniform rows of windows. Counting the levels: It is significantly taller than the base. Counting the levels gives approximately 7 to 8 stories.",
+      "ground_truth": "3",
+      "answer_type": "number",
+      "ttft_seconds": 4.1253,
+      "correct": false
+    },
+    {
+      "question": "Why is there a gap between the roof and wall?",
+      "predicted": "*   *Window/Vent* (Describes the object).",
+      "ground_truth": "yes",
+      "answer_type": "other",
+      "ttft_seconds": 4.1009,
+      "correct": false
+    },
+    {
+      "question": "What is the man doing in the street?",
+      "predicted": "Crossing the street",
+      "ground_truth": "walking",
+      "answer_type": "other",
+      "ttft_seconds": 2.0522,
+      "correct": false
+    },
+    {
+      "question": "What color is the bedspread?",
+      "predicted": "*   Since the user requested one word or a short phrase, I will choose the most representative single word. \"Beige\" is the safest and most accurate description for the overall color tone.",
+      "ground_truth": "white",
+      "answer_type": "other",
+      "ttft_seconds": 3.6753,
+      "correct": false
+    },
+    {
+      "question": "How many umbrellas do you see?",
+      "predicted": "*   Since the answer is \"zero,\" I must state that clearly and concisely.",
+      "ground_truth": "0",
+      "answer_type": "number",
+      "ttft_seconds": 4.0925,
+      "correct": false
+    },
+    {
+      "question": "Are the lights on in this room?",
+      "predicted": "*   I do not see any visible ceiling fixtures that are lit (the ceiling is generally white and uniform, making it hard to tell if hidden fixtures are on).",
+      "ground_truth": "no",
+      "answer_type": "yes/no",
+      "ttft_seconds": 4.0861,
+      "correct": true
+    },
+    {
+      "question": "What is to the right of the soup?",
+      "predicted": "*   *Option 3 (Listing the visible items):* Chopsticks, spoon. (Short phrase).",
+      "ground_truth": "chopsticks",
+      "answer_type": "other",
+      "ttft_seconds": 4.1196,
+      "correct": true
+    },
+    {
+      "question": "What kind of room is this?",
+      "predicted": "Hotel room",
+      "ground_truth": "bedroom",
+      "answer_type": "other",
+      "ttft_seconds": 1.9863,
+      "correct": false
+    },
+    {
+      "question": "What are the people in the background doing?",
+      "predicted": "*   *Gathering:* Describes the setup, not the action.",
+      "ground_truth": "watching",
+      "answer_type": "other",
+      "ttft_seconds": 4.0557,
+      "correct": false
+    },
+    {
+      "question": "How many pictures on the wall?",
+      "predicted": "*   Total: 5 + 4 = 9",
+      "ground_truth": "7",
+      "answer_type": "number",
+      "ttft_seconds": 4.0573,
+      "correct": false
+    },
+    {
+      "question": "What does the truck on the left sell?",
+      "predicted": "Sundae/shakes/cones",
+      "ground_truth": "ice cream",
+      "answer_type": "other",
+      "ttft_seconds": 2.0183,
+      "correct": false
+    },
+    {
+      "question": "Are these twin mattresses?",
+      "predicted": "*   *Draft 4:* Twin size. (Two words, accurate)",
+      "ground_truth": "no",
+      "answer_type": "yes/no",
+      "ttft_seconds": 4.029,
+      "correct": false
+    },
+    {
+      "question": "How many people are on the field?",
+      "predicted": "*   **Person 3 (Foreground Right):** The batter/player swinging the bat (wearing blue/white uniform).",
+      "ground_truth": "3",
+      "answer_type": "number",
+      "ttft_seconds": 4.0234,
+      "correct": true
+    },
+    {
+      "question": "What color is the grass in this picture?",
+      "predicted": "*   *Option 3 (Stating the nature of the image):* Black and white. (This explains *why* I don't know the color)",
+      "ground_truth": "green",
+      "answer_type": "other",
+      "ttft_seconds": 4.039,
+      "correct": false
+    },
+    {
+      "question": "How many sources of light are there?",
+      "predicted": "*",
+      "ground_truth": "1",
+      "answer_type": "number",
+      "ttft_seconds": 4.0324,
+      "correct": false
+    }
+  ]
+}
