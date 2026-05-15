@@ -1,5 +1,6 @@
 # Resilient AI Challenge — Track 3: Innovation Challenge
 ## Team: Visca Barca | MCTA4363
+https://claude.ai/share/22a28838-ec22-4fbe-9e4d-2655c3d7f659
 
 [![Challenge](https://img.shields.io/badge/Challenge-Resilient%20AI-teal)](https://resilientai.org)
 [![Model](https://img.shields.io/badge/Model-Gemma%204%20E4B-blue)](https://huggingface.co/google/gemma-4-E4B-it)
