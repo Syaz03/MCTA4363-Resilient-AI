@@ -1,0 +1,409 @@
+{
+  "model": "gemma-4-E4B-it selective NF4 vision protected",
+  "vqa_accuracy": 0.1,
+  "avg_ttft_seconds": 1.5162,
+  "co2_kg": 0.00158233,
+  "co2_grams_per_sample": 0.031647,
+  "results": [
+    {
+      "question": "How many signs?",
+      "predicted": "I need an image or more context to answer the question \"How many signs?\". Please provide the image",
+      "ground_truth": "4",
+      "answer_type": "number",
+      "ttft_seconds": 2.2874,
+      "correct": false
+    },
+    {
+      "question": "Is it daylight in this picture?",
+      "predicted": "Based on the image provided, it is **not possible to definitively tell** if it is daylight.",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 1.8203,
+      "correct": false
+    },
+    {
+      "question": "How many are playing ball?",
+      "predicted": "I'm sorry, but there is no image provided for me to analyze. Please provide an image",
+      "ground_truth": "1",
+      "answer_type": "number",
+      "ttft_seconds": 1.8542,
+      "correct": false
+    },
+    {
+      "question": "How many beds?",
+      "predicted": "I'm sorry, but the image provided is too blurry and lacks sufficient detail for me to count",
+      "ground_truth": "1",
+      "answer_type": "number",
+      "ttft_seconds": 1.8272,
+      "correct": false
+    },
+    {
+      "question": "How many people are on the field?",
+      "predicted": "I am sorry, but you have not provided an image or any context for me to answer the question",
+      "ground_truth": "3",
+      "answer_type": "number",
+      "ttft_seconds": 1.8227,
+      "correct": false
+    },
+    {
+      "question": "What is to the right of the soup?",
+      "predicted": "I'm sorry, but you have not provided an image or any context that includes a \"soup",
+      "ground_truth": "chopsticks",
+      "answer_type": "other",
+      "ttft_seconds": 1.8203,
+      "correct": false
+    },
+    {
+      "question": "Why is the cow laying down?",
+      "predicted": "I'm sorry, but there is **no image provided** for me to answer your question about",
+      "ground_truth": "tired",
+      "answer_type": "other",
+      "ttft_seconds": 1.8136,
+      "correct": false
+    },
+    {
+      "question": "How many frames are on the wall?",
+      "predicted": "There are **two** frames on the wall.",
+      "ground_truth": "7",
+      "answer_type": "number",
+      "ttft_seconds": 1.0507,
+      "correct": false
+    },
+    {
+      "question": "What is behind the foot of the bed?",
+      "predicted": "I am sorry, but the image provided is too abstract and lacks the context of a bed to answer",
+      "ground_truth": "chair",
+      "answer_type": "other",
+      "ttft_seconds": 1.8246,
+      "correct": false
+    },
+    {
+      "question": "What color is the bedspread?",
+      "predicted": "I'm sorry, but there is no bedspread visible in the image provided. The image is",
+      "ground_truth": "white",
+      "answer_type": "other",
+      "ttft_seconds": 1.8278,
+      "correct": false
+    },
+    {
+      "question": "Is that a folding chair?",
+      "predicted": "No.",
+      "ground_truth": "no",
+      "answer_type": "yes/no",
+      "ttft_seconds": 0.3453,
+      "correct": true
+    },
+    {
+      "question": "How many seats are there?",
+      "predicted": "I cannot answer this question because there is no information about seats in the image provided. The image appears",
+      "ground_truth": "1",
+      "answer_type": "number",
+      "ttft_seconds": 1.8027,
+      "correct": false
+    },
+    {
+      "question": "How many pictures on the wall?",
+      "predicted": "2",
+      "ground_truth": "7",
+      "answer_type": "number",
+      "ttft_seconds": 0.2587,
+      "correct": false
+    },
+    {
+      "question": "Is this room decorated for the 1970s?",
+      "predicted": "Based on the image provided, it is **impossible to tell** if the room is decorated for the",
+      "ground_truth": "no",
+      "answer_type": "yes/no",
+      "ttft_seconds": 1.8163,
+      "correct": false
+    },
+    {
+      "question": "Could this be a hotel room?",
+      "predicted": "Based on the image, it is **impossible to tell** if this is a hotel room. The",
+      "ground_truth": "no",
+      "answer_type": "yes/no",
+      "ttft_seconds": 1.8327,
+      "correct": false
+    },
+    {
+      "question": "Is the bed white?",
+      "predicted": "No.",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 0.3498,
+      "correct": false
+    },
+    {
+      "question": "What does the truck on the left sell?",
+      "predicted": "I'm sorry, but you have not provided an image. Please provide the image you are referring",
+      "ground_truth": "ice cream",
+      "answer_type": "other",
+      "ttft_seconds": 1.8281,
+      "correct": false
+    },
+    {
+      "question": "What website copyrighted the picture?",
+      "predicted": "I am sorry, but I cannot determine which website copyrighted the picture because the image provided is mostly a",
+      "ground_truth": "foodiebakercom",
+      "answer_type": "other",
+      "ttft_seconds": 1.8311,
+      "correct": false
+    },
+    {
+      "question": "What animal print does that chair resemble?",
+      "predicted": "I'm sorry, but there is no chair visible in the image provided. The image is mostly",
+      "ground_truth": "none",
+      "answer_type": "other",
+      "ttft_seconds": 1.819,
+      "correct": false
+    },
+    {
+      "question": "Did the batter hit the ball?",
+      "predicted": "I need an image or more context to answer your question. Please provide the image you are referring to",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 1.8265,
+      "correct": false
+    },
+    {
+      "question": "What is the size of the bed?",
+      "predicted": "I'm sorry, but the image provided is too blurry and abstract to determine the size of a",
+      "ground_truth": "queen",
+      "answer_type": "other",
+      "ttft_seconds": 1.8189,
+      "correct": false
+    },
+    {
+      "question": "Is the bed made?",
+      "predicted": "I cannot answer this question because there is no image of a bed provided. The image you provided is",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 1.8346,
+      "correct": false
+    },
+    {
+      "question": "Is this room in someone's home?",
+      "predicted": "Based on the image, it is **not possible to tell** if this is a room in someone",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 1.8229,
+      "correct": false
+    },
+    {
+      "question": "What color are the walls?",
+      "predicted": "Gray.",
+      "ground_truth": "white",
+      "answer_type": "other",
+      "ttft_seconds": 0.3487,
+      "correct": false
+    },
+    {
+      "question": "How many colors is the building on the right painted?",
+      "predicted": "I'm sorry, but there is no image provided for me to answer the question about the building",
+      "ground_truth": "1",
+      "answer_type": "number",
+      "ttft_seconds": 1.829,
+      "correct": false
+    },
+    {
+      "question": "How many skyscrapers are there?",
+      "predicted": "I'm sorry, but the image you provided is a solid gray color with no visible skyscrapers or",
+      "ground_truth": "2",
+      "answer_type": "number",
+      "ttft_seconds": 1.8288,
+      "correct": false
+    },
+    {
+      "question": "How many pictures are there?",
+      "predicted": "There are 2 pictures.",
+      "ground_truth": "7",
+      "answer_type": "number",
+      "ttft_seconds": 0.7037,
+      "correct": false
+    },
+    {
+      "question": "What kind of room is this?",
+      "predicted": "Based on the image provided, it is **impossible to tell what kind of room this is**.",
+      "ground_truth": "bedroom",
+      "answer_type": "other",
+      "ttft_seconds": 1.8326,
+      "correct": false
+    },
+    {
+      "question": "Is this a creamy soup?",
+      "predicted": "No.",
+      "ground_truth": "no",
+      "answer_type": "yes/no",
+      "ttft_seconds": 0.341,
+      "correct": true
+    },
+    {
+      "question": "Are these twin mattresses?",
+      "predicted": "Based on the image, it is **not possible to tell** if these are twin mattresses. The",
+      "ground_truth": "no",
+      "answer_type": "yes/no",
+      "ttft_seconds": 1.8326,
+      "correct": true
+    },
+    {
+      "question": "Is there a chain link fence in the image?",
+      "predicted": "I cannot determine if there is a chain link fence in the image because the image is mostly a solid",
+      "ground_truth": "no",
+      "answer_type": "yes/no",
+      "ttft_seconds": 1.8235,
+      "correct": true
+    },
+    {
+      "question": "What is he on top of?",
+      "predicted": "I'm sorry, but the image provided is too blurry and indistinct for me to tell you what",
+      "ground_truth": "picnic table",
+      "answer_type": "other",
+      "ttft_seconds": 1.8227,
+      "correct": false
+    },
+    {
+      "question": "What color is the kids hair?",
+      "predicted": "I cannot answer the question because there is no image provided.",
+      "ground_truth": "blonde",
+      "answer_type": "other",
+      "ttft_seconds": 1.2277,
+      "correct": false
+    },
+    {
+      "question": "How many stories is the building on the left?",
+      "predicted": "I am sorry, but there is no image provided for me to answer the question. Please provide the",
+      "ground_truth": "3",
+      "answer_type": "number",
+      "ttft_seconds": 1.8158,
+      "correct": false
+    },
+    {
+      "question": "How many chairs are in the photo?",
+      "predicted": "I cannot determine the number of chairs because the image provided is heavily obscured and appears to be a low",
+      "ground_truth": "1",
+      "answer_type": "number",
+      "ttft_seconds": 1.8515,
+      "correct": false
+    },
+    {
+      "question": "Why is there a gap between the roof and wall?",
+      "predicted": "I'm sorry, but the image provided is too blurry and indistinct for me to see a roof",
+      "ground_truth": "yes",
+      "answer_type": "other",
+      "ttft_seconds": 1.8292,
+      "correct": false
+    },
+    {
+      "question": "Are the windows big?",
+      "predicted": "Yes.",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 0.3443,
+      "correct": true
+    },
+    {
+      "question": "What is the chair made of?",
+      "predicted": "I'm sorry, but there is no chair visible in the image provided. The image is mostly",
+      "ground_truth": "leather",
+      "answer_type": "other",
+      "ttft_seconds": 1.8257,
+      "correct": false
+    },
+    {
+      "question": "Which room is this?",
+      "predicted": "Based on the image provided, it is **impossible to determine which room this is**.\n\nThe image",
+      "ground_truth": "bedroom",
+      "answer_type": "other",
+      "ttft_seconds": 1.8242,
+      "correct": false
+    },
+    {
+      "question": "How many photo's can you see?",
+      "predicted": "I cannot see any photos in the image provided; it is a solid gray color.",
+      "ground_truth": "1",
+      "answer_type": "number",
+      "ttft_seconds": 1.6516,
+      "correct": false
+    },
+    {
+      "question": "Are the lights on in this room?",
+      "predicted": "Yes.",
+      "ground_truth": "no",
+      "answer_type": "yes/no",
+      "ttft_seconds": 0.3451,
+      "correct": false
+    },
+    {
+      "question": "What are the people in the background doing?",
+      "predicted": "I'm sorry, but the image provided is too blurry and indistinct for me to tell you what",
+      "ground_truth": "watching",
+      "answer_type": "other",
+      "ttft_seconds": 1.8258,
+      "correct": false
+    },
+    {
+      "question": "What is the child eating?",
+      "predicted": "I'm sorry, but there is no image provided. Please provide an image so I can tell",
+      "ground_truth": "donut",
+      "answer_type": "other",
+      "ttft_seconds": 1.8325,
+      "correct": false
+    },
+    {
+      "question": "What color is the grass in this picture?",
+      "predicted": "I cannot determine the color of the grass because the image provided is mostly a solid gray color with some",
+      "ground_truth": "green",
+      "answer_type": "other",
+      "ttft_seconds": 1.8263,
+      "correct": false
+    },
+    {
+      "question": "How many sources of light are there?",
+      "predicted": "There are **two** visible sources of light (windows).",
+      "ground_truth": "1",
+      "answer_type": "number",
+      "ttft_seconds": 1.233,
+      "correct": false
+    },
+    {
+      "question": "What is the man doing in the street?",
+      "predicted": "I'm sorry, but you have not provided an image or any context for me to answer the",
+      "ground_truth": "walking",
+      "answer_type": "other",
+      "ttft_seconds": 1.8333,
+      "correct": false
+    },
+    {
+      "question": "Is this rice noodle soup?",
+      "predicted": "No.",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 0.3425,
+      "correct": false
+    },
+    {
+      "question": "How many umbrellas do you see?",
+      "predicted": "I do not see any umbrellas in the image provided.",
+      "ground_truth": "0",
+      "answer_type": "number",
+      "ttft_seconds": 1.1344,
+      "correct": false
+    },
+    {
+      "question": "Is the boy playing baseball?",
+      "predicted": "I'm sorry, but I cannot answer your question because there is no image provided.",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 1.7407,
+      "correct": false
+    },
+    {
+      "question": "Where is he looking?",
+      "predicted": "I am sorry, but the image provided is too abstract and heavily obscured to determine where \"he\"",
+      "ground_truth": "down",
+      "answer_type": "other",
+      "ttft_seconds": 1.8304,
+      "correct": false
+    }
+  ]
+}
