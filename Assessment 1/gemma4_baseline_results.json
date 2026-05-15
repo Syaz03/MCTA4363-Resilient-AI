@@ -1,0 +1,409 @@
+{
+  "model": "gemma-4-E4B-it unquantized bfloat16",
+  "vqa_accuracy": 0.46,
+  "avg_ttft_seconds": 1.4533,
+  "co2_kg": 0.00141861,
+  "co2_grams_per_sample": 0.028372,
+  "results": [
+    {
+      "question": "Are these twin mattresses?",
+      "predicted": "Likely",
+      "ground_truth": "no",
+      "answer_type": "yes/no",
+      "ttft_seconds": 2.1878,
+      "correct": false
+    },
+    {
+      "question": "Is it daylight in this picture?",
+      "predicted": "Yes",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 1.1845,
+      "correct": true
+    },
+    {
+      "question": "How many sources of light are there?",
+      "predicted": "Three",
+      "ground_truth": "1",
+      "answer_type": "number",
+      "ttft_seconds": 1.1847,
+      "correct": false
+    },
+    {
+      "question": "What kind of room is this?",
+      "predicted": "Bedroom",
+      "ground_truth": "bedroom",
+      "answer_type": "other",
+      "ttft_seconds": 1.1817,
+      "correct": true
+    },
+    {
+      "question": "How many signs?",
+      "predicted": "Four",
+      "ground_truth": "4",
+      "answer_type": "number",
+      "ttft_seconds": 1.1827,
+      "correct": true
+    },
+    {
+      "question": "Is the bed white?",
+      "predicted": "No",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 1.1847,
+      "correct": false
+    },
+    {
+      "question": "What is the child eating?",
+      "predicted": "Cookie",
+      "ground_truth": "donut",
+      "answer_type": "other",
+      "ttft_seconds": 1.1848,
+      "correct": false
+    },
+    {
+      "question": "How many skyscrapers are there?",
+      "predicted": "Two",
+      "ground_truth": "2",
+      "answer_type": "number",
+      "ttft_seconds": 1.1912,
+      "correct": true
+    },
+    {
+      "question": "What color are the walls?",
+      "predicted": "Beige",
+      "ground_truth": "white",
+      "answer_type": "other",
+      "ttft_seconds": 1.7455,
+      "correct": false
+    },
+    {
+      "question": "Could this be a hotel room?",
+      "predicted": "Yes",
+      "ground_truth": "no",
+      "answer_type": "yes/no",
+      "ttft_seconds": 1.188,
+      "correct": false
+    },
+    {
+      "question": "How many beds?",
+      "predicted": "One",
+      "ground_truth": "1",
+      "answer_type": "number",
+      "ttft_seconds": 1.1828,
+      "correct": true
+    },
+    {
+      "question": "What website copyrighted the picture?",
+      "predicted": "FoodieBaker.com",
+      "ground_truth": "foodiebakercom",
+      "answer_type": "other",
+      "ttft_seconds": 3.4428,
+      "correct": true
+    },
+    {
+      "question": "What is behind the foot of the bed?",
+      "predicted": "Nightstand",
+      "ground_truth": "chair",
+      "answer_type": "other",
+      "ttft_seconds": 1.7524,
+      "correct": false
+    },
+    {
+      "question": "What color is the bedspread?",
+      "predicted": "Tan",
+      "ground_truth": "white",
+      "answer_type": "other",
+      "ttft_seconds": 1.183,
+      "correct": false
+    },
+    {
+      "question": "What are the people in the background doing?",
+      "predicted": "Walking/Standing",
+      "ground_truth": "watching",
+      "answer_type": "other",
+      "ttft_seconds": 2.3148,
+      "correct": false
+    },
+    {
+      "question": "What is he on top of?",
+      "predicted": "A skateboard",
+      "ground_truth": "picnic table",
+      "answer_type": "other",
+      "ttft_seconds": 1.746,
+      "correct": false
+    },
+    {
+      "question": "How many photo's can you see?",
+      "predicted": "One",
+      "ground_truth": "1",
+      "answer_type": "number",
+      "ttft_seconds": 1.1798,
+      "correct": true
+    },
+    {
+      "question": "Which room is this?",
+      "predicted": "Bedroom",
+      "ground_truth": "bedroom",
+      "answer_type": "other",
+      "ttft_seconds": 1.1859,
+      "correct": true
+    },
+    {
+      "question": "What does the truck on the left sell?",
+      "predicted": "Sundaes and shakes",
+      "ground_truth": "ice cream",
+      "answer_type": "other",
+      "ttft_seconds": 2.8794,
+      "correct": false
+    },
+    {
+      "question": "Is this rice noodle soup?",
+      "predicted": "Yes",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 1.1813,
+      "correct": true
+    },
+    {
+      "question": "What color is the grass in this picture?",
+      "predicted": "Black and white",
+      "ground_truth": "green",
+      "answer_type": "other",
+      "ttft_seconds": 2.3111,
+      "correct": false
+    },
+    {
+      "question": "What is the size of the bed?",
+      "predicted": "Not visible",
+      "ground_truth": "queen",
+      "answer_type": "other",
+      "ttft_seconds": 1.7485,
+      "correct": false
+    },
+    {
+      "question": "Is the bed made?",
+      "predicted": "Yes",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 1.1809,
+      "correct": true
+    },
+    {
+      "question": "How many colors is the building on the right painted?",
+      "predicted": "Brown",
+      "ground_truth": "1",
+      "answer_type": "number",
+      "ttft_seconds": 1.184,
+      "correct": false
+    },
+    {
+      "question": "Is there a chain link fence in the image?",
+      "predicted": "No",
+      "ground_truth": "no",
+      "answer_type": "yes/no",
+      "ttft_seconds": 1.1885,
+      "correct": true
+    },
+    {
+      "question": "Where is he looking?",
+      "predicted": "Forward",
+      "ground_truth": "down",
+      "answer_type": "other",
+      "ttft_seconds": 1.181,
+      "correct": false
+    },
+    {
+      "question": "Is this room in someone's home?",
+      "predicted": "Yes",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 1.1796,
+      "correct": true
+    },
+    {
+      "question": "How many seats are there?",
+      "predicted": "Two",
+      "ground_truth": "1",
+      "answer_type": "number",
+      "ttft_seconds": 1.1827,
+      "correct": false
+    },
+    {
+      "question": "Is the boy playing baseball?",
+      "predicted": "Yes",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 1.1892,
+      "correct": true
+    },
+    {
+      "question": "How many frames are on the wall?",
+      "predicted": "Five",
+      "ground_truth": "7",
+      "answer_type": "number",
+      "ttft_seconds": 1.1872,
+      "correct": false
+    },
+    {
+      "question": "How many pictures are there?",
+      "predicted": "Four",
+      "ground_truth": "7",
+      "answer_type": "number",
+      "ttft_seconds": 1.185,
+      "correct": false
+    },
+    {
+      "question": "How many people are on the field?",
+      "predicted": "Three",
+      "ground_truth": "3",
+      "answer_type": "number",
+      "ttft_seconds": 1.1821,
+      "correct": true
+    },
+    {
+      "question": "What color is the kids hair?",
+      "predicted": "Blonde",
+      "ground_truth": "blonde",
+      "answer_type": "other",
+      "ttft_seconds": 1.7539,
+      "correct": true
+    },
+    {
+      "question": "What animal print does that chair resemble?",
+      "predicted": "None",
+      "ground_truth": "none",
+      "answer_type": "other",
+      "ttft_seconds": 1.1809,
+      "correct": true
+    },
+    {
+      "question": "How many stories is the building on the left?",
+      "predicted": "Five",
+      "ground_truth": "3",
+      "answer_type": "number",
+      "ttft_seconds": 1.1812,
+      "correct": false
+    },
+    {
+      "question": "Are the lights on in this room?",
+      "predicted": "No",
+      "ground_truth": "no",
+      "answer_type": "yes/no",
+      "ttft_seconds": 1.1848,
+      "correct": true
+    },
+    {
+      "question": "How many pictures on the wall?",
+      "predicted": "Five",
+      "ground_truth": "7",
+      "answer_type": "number",
+      "ttft_seconds": 1.1862,
+      "correct": false
+    },
+    {
+      "question": "Is this a creamy soup?",
+      "predicted": "Yes",
+      "ground_truth": "no",
+      "answer_type": "yes/no",
+      "ttft_seconds": 1.2094,
+      "correct": false
+    },
+    {
+      "question": "How many chairs are in the photo?",
+      "predicted": "Two",
+      "ground_truth": "1",
+      "answer_type": "number",
+      "ttft_seconds": 1.1836,
+      "correct": false
+    },
+    {
+      "question": "What is to the right of the soup?",
+      "predicted": "Chopsticks",
+      "ground_truth": "chopsticks",
+      "answer_type": "other",
+      "ttft_seconds": 2.3187,
+      "correct": true
+    },
+    {
+      "question": "Why is there a gap between the roof and wall?",
+      "predicted": "Ventilation",
+      "ground_truth": "yes",
+      "answer_type": "other",
+      "ttft_seconds": 1.7524,
+      "correct": false
+    },
+    {
+      "question": "Is this room decorated for the 1970s?",
+      "predicted": "No",
+      "ground_truth": "no",
+      "answer_type": "yes/no",
+      "ttft_seconds": 1.1843,
+      "correct": true
+    },
+    {
+      "question": "What is the chair made of?",
+      "predicted": "Leather",
+      "ground_truth": "leather",
+      "answer_type": "other",
+      "ttft_seconds": 1.1839,
+      "correct": true
+    },
+    {
+      "question": "Why is the cow laying down?",
+      "predicted": "Resting",
+      "ground_truth": "tired",
+      "answer_type": "other",
+      "ttft_seconds": 1.7539,
+      "correct": false
+    },
+    {
+      "question": "How many are playing ball?",
+      "predicted": "One",
+      "ground_truth": "1",
+      "answer_type": "number",
+      "ttft_seconds": 1.1842,
+      "correct": true
+    },
+    {
+      "question": "How many umbrellas do you see?",
+      "predicted": "None",
+      "ground_truth": "0",
+      "answer_type": "number",
+      "ttft_seconds": 1.1801,
+      "correct": false
+    },
+    {
+      "question": "Are the windows big?",
+      "predicted": "Yes",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 1.1856,
+      "correct": true
+    },
+    {
+      "question": "Did the batter hit the ball?",
+      "predicted": "No",
+      "ground_truth": "yes",
+      "answer_type": "yes/no",
+      "ttft_seconds": 1.1839,
+      "correct": false
+    },
+    {
+      "question": "Is that a folding chair?",
+      "predicted": "No",
+      "ground_truth": "no",
+      "answer_type": "yes/no",
+      "ttft_seconds": 1.1807,
+      "correct": true
+    },
+    {
+      "question": "What is the man doing in the street?",
+      "predicted": "Crossing the street",
+      "ground_truth": "walking",
+      "answer_type": "other",
+      "ttft_seconds": 2.3159,
+      "correct": false
+    }
+  ]
+}
